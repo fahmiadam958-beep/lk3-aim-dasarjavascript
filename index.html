@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profil ^ Adam</title>
+  <style>
+    :root {
+      --primary: #0056b3;
+      --secondary: #0088ff;
+      --bg-light: #f4f8fc;
+      --bg-white: #ffffff;
+      --text-dark: #1e293b;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: var(--text-dark);
+      background-color: var(--bg-white);
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: var(--bg-white);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      transition: box-shadow 0.3s ease;
+    }
+
+    nav .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--primary);
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1.5rem;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: var(--primary);
+    }
+
+    section {
+      padding: 6rem 8% 4rem 8%;
+      min-height: 70vh;
+    }
+
+    .bg-light {
+      background-color: var(--bg-light);
+    }
+
+    h2.judul {
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    #hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      background-color: var(--bg-light);
+      padding-top: 8rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-text {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #e0f2fe;
+      color: var(--primary);
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    #hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 0.4rem;
+    }
+
+    #hero h1 span {
+      color: var(--primary);
+    }
+
+    #hero h2.sub-title {
+      font-size: 1.5rem;
+      color: var(--secondary);
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    #hero p {
+      color: var(--text-muted);
+      max-width: 550px;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+    }
+
+.hero-image {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    flex: 1 1 0%;
+}
+    
+.hero-image img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    box-shadow: var(--shadow-hover);
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    border-width: 6px;
+    border-style: solid;
+    border-color: white;
+    border-image: none;
+    transition: 0.5s;
+    animation: 8s ease-in-out 0s infinite normal none running morph;
+}
+
+    .hero-image img:hover {
+      transform: scale(1.08) rotate(3deg);
+      box-shadow: 0 15px 35px rgba(0, 136, 255, 0.4);
+      border-color: var(--secondary);
+    }
+
+    @keyframes floatImage {
+      0% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-15px);
+      }
+      100% {
+        transform: translateY(0px);
+      }
+    }
+
+    @keyframes glowPulse {
+      0% {
+        box-shadow: 0 0 15px rgba(0, 86, 179, 0.3);
+      }
+      100% {
+        box-shadow: 0 0 30px rgba(0, 136, 255, 0.6);
+      }
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+      border: none;
+      transition: all 0.3s ease;
+      font-size: 1rem;
+      display: inline-block;
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: var(--bg-white);
+    }
+
+    .btn-primary:hover {
+      background-color: #003d80;
+    }
+
+    .btn-secondary {
+      border: 2px solid var(--primary);
+      color: var(--primary);
+      background-color: transparent;
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--primary);
+      color: var(--bg-white);
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .card {
+      background-color: var(--bg-white);
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--primary);
+      padding: 1.5rem;
+      border-radius: 8px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 86, 179, 0.1);
+    }
+
+    .card h3 {
+      color: var(--primary);
+      margin-bottom: 0.8rem;
+    }
+
+    .card p, .card ul {
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .card ul {
+      padding-left: 1.2rem;
+    }
+
+    .kontak-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .kontak-box {
+      background: var(--bg-white);
+      border: 1px solid var(--border);
+      padding: 20px;
+      border-radius: 8px;
+      line-height: 2;
+    }
+
+    .formShadows {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      border: 2px solid var(--primary);
+      box-shadow: 5px 5px 0px var(--primary);
+      text-align: center;
+    }
+
+    footer {
+      background-color: var(--primary);
+      color: var(--bg-white);
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      #hero {
+        flex-direction: column-reverse;
+        text-align: center;
+      }
+      .hero-text p {
+        margin: 0 auto 1.5rem auto;
+      }
+      .btn-group {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="navbar">
+    <div class="logo">Profile</div>
+    <ul>
+      <li><a href="#hero">Beranda</a></li>
+      <li><a href="#tentang">Tentang</a></li>
+      <li><a href="#skills">Keahlian</a></li>
+      <li><a href="#kontak">Kontak</a></li>
+    </ul>
+  </nav>
+
+  <section id="hero">
+    <div class="hero-text">
+      <div class="badge">👋 Selamat Datang!</div>
+      <p class="sapaan" style="margin-bottom: 0;">Halo, saya</p>
+      <h1><span id="nama-user">Adam Irsyad M.</span></h1>
+      <h2 class="sub-title">Siswa Teladan</h2>
+      <p>
+        Saya sedang belajar pengembangan web menggunakan struktur HTML, desain CSS yang bersih, serta logika interaktif dari JavaScript.
+      </p>
+      <div class="btn-group">
+        <a href="#tentang" class="btn btn-primary">Kenal Saya</a>
+        <button class="btn btn-secondary" id="btn-salam">Sapa Saya!</button>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="живые обои.jpg" alt="Foto Profil Adam">
+    </div>
+  </section>
+
+  <section id="tentang">
+    <h2 class="judul">Tentang Saya</h2>
+    <p style="text-align: center; max-width: 700px; margin: 0 auto 2rem auto; color: var(--text-muted); line-height: 1.6;">
+      Saya sangat menyukai dunia teknologi dan pemrograman. Saya berfokus mempelajari dasar-dasar pembuatan website agar dapat membangun proyek digital yang bermanfaat, responsif, dan menarik.
+    </p>
+
+    <div class="grid-container">
+      <div class="card">
+        <h3>👋 Perkenalan</h3>
+        <p>
+          Halo! Nama saya Adam Irsyad M. Saya adalah siswa jurusan <strong>Pengembangan Perangkat Lunak dan Gim (PPLG)</strong> di SMK Negeri 2 Magelang.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>🎯 Hobi & Minat</h3>
+        <p>
+          Beberapa hobi dan minat yang sering saya lakukan:
+        </p>
+        <ul style="margin-top: 0.5rem;">
+          <li>Belajar Teknologi & Coding</li>
+          <li>Bermain Game</li>
+          <li>Mendengarkan Musik</li>
+          <li>Membuat Desain Visual</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="bg-light">
+    <h2 class="judul">Keahlian Saya</h2>
+    <div class="grid-container">
+      <div class="card">
+        <h3>💻 HTML5</h3>
+        <p>Membangun struktur dan kerangka halaman website yang rapi dan terorganisir.</p>
+      </div>
+      <div class="card">
+        <h3>🎨 CSS3</h3>
+        <p>Mendesain tampilan, warna, layout responsif, serta gaya antarmuka yang bersih.</p>
+      </div>
+      <div class="card">
+        <h3>⚡ JavaScript</h3>
+        <p>Menambahkan fungsionalitas, logika interaktif, dan penanganan event pada halaman web.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="kontak">
+    <h2 class="judul">Hubungi Saya</h2>
+    <p style="text-align: center; color: var(--text-muted);">
+      Mari berkolaborasi untuk membuat proyek web menarik! Silakan hubungi saya melalui informasi di bawah.
+    </p>
+
+      <div class="formShadows">
+        <h3>⚡ Uji Coba Interaktivitas JS</h3>
+        <p id="teks-counter" style="margin: 1rem 0; color: var(--text-dark);">
+          Jumlah tombol ini diklik: <strong>0</strong> kali
+        </p>
+        <button class="btn btn-primary" id="btn-hitung">Tambah Klik</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Adam Irsyad M. • Dibuat dengan HTML, CSS & JavaScript</p>
+  </footer>
+
+  <script>
+
+    window.addEventListener('scroll', function () {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        navbar.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.1)';
+      } else {
+        navbar.style.boxShadow = 'none';
+      }
+    });
+
+    const btnSalam = document.getElementById('btn-salam');
+    const namaUser = document.getElementById('nama-user');
+
+    btnSalam.addEventListener('click', function () {
+      const namaBaru = prompt('Masukkan nama Anda:');
+      if (namaBaru && namaBaru.trim() !== '') {
+        namaUser.textContent = namaBaru;
+        alert('Selamat datang, ' + namaBaru + '!');
+      }
+    });
+
+    let jumlahKlik = 0;
+    const btnHitung = document.getElementById('btn-hitung');
+    const teksCounter = document.getElementById('teks-counter');
+
+    btnHitung.addEventListener('click', function () {
+      jumlahKlik++;
+      teksCounter.innerHTML = 'Jumlah tombol ini diklik: <strong>' + jumlahKlik + '</strong> kali';
+    });
+  </script>
+</body>
+</html>
