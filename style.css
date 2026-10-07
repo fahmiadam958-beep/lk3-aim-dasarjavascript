@@ -1,0 +1,292 @@
+  :root {
+      --primary: #0056b3;
+      --secondary: #0088ff;
+      --bg-light: #f4f8fc;
+      --bg-white: #ffffff;
+      --text-dark: #1e293b;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: var(--text-dark);
+      background-color: var(--bg-white);
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: var(--bg-white);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      transition: box-shadow 0.3s ease;
+    }
+
+    nav .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--primary);
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1.5rem;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: var(--primary);
+    }
+
+    section {
+      padding: 6rem 8% 4rem 8%;
+      min-height: 70vh;
+    }
+
+    .bg-light {
+      background-color: var(--bg-light);
+    }
+
+    h2.judul {
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    #hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      background-color: var(--bg-light);
+      padding-top: 8rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-text {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #e0f2fe;
+      color: var(--primary);
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    #hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 0.4rem;
+    }
+
+    #hero h1 span {
+      color: var(--primary);
+    }
+
+    #hero h2.sub-title {
+      font-size: 1.5rem;
+      color: var(--secondary);
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    #hero p {
+      color: var(--text-muted);
+      max-width: 550px;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+    }
+
+.hero-image {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    flex: 1 1 0%;
+}
+    
+.hero-image img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    box-shadow: var(--shadow-hover);
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    border-width: 6px;
+    border-style: solid;
+    border-color: white;
+    border-image: none;
+    transition: 0.5s;
+    animation: 8s ease-in-out 0s infinite normal none running morph;
+}
+
+    .hero-image img:hover {
+      transform: scale(1.08) rotate(3deg);
+      box-shadow: 0 15px 35px rgba(0, 136, 255, 0.4);
+      border-color: var(--secondary);
+    }
+
+    @keyframes floatImage {
+      0% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-15px);
+      }
+      100% {
+        transform: translateY(0px);
+      }
+    }
+
+    @keyframes glowPulse {
+      0% {
+        box-shadow: 0 0 15px rgba(0, 86, 179, 0.3);
+      }
+      100% {
+        box-shadow: 0 0 30px rgba(0, 136, 255, 0.6);
+      }
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+      border: none;
+      transition: all 0.3s ease;
+      font-size: 1rem;
+      display: inline-block;
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: var(--bg-white);
+    }
+
+    .btn-primary:hover {
+      background-color: #003d80;
+    }
+
+    .btn-secondary {
+      border: 2px solid var(--primary);
+      color: var(--primary);
+      background-color: transparent;
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--primary);
+      color: var(--bg-white);
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .card {
+      background-color: var(--bg-white);
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--primary);
+      padding: 1.5rem;
+      border-radius: 8px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 86, 179, 0.1);
+    }
+
+    .card h3 {
+      color: var(--primary);
+      margin-bottom: 0.8rem;
+    }
+
+    .card p, .card ul {
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .card ul {
+      padding-left: 1.2rem;
+    }
+
+    .kontak-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .kontak-box {
+      background: var(--bg-white);
+      border: 1px solid var(--border);
+      padding: 20px;
+      border-radius: 8px;
+      line-height: 2;
+    }
+
+    .formShadows {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      border: 2px solid var(--primary);
+      box-shadow: 5px 5px 0px var(--primary);
+      text-align: center;
+    }
+
+    footer {
+      background-color: var(--primary);
+      color: var(--bg-white);
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      #hero {
+        flex-direction: column-reverse;
+        text-align: center;
+      }
+      .hero-text p {
+        margin: 0 auto 1.5rem auto;
+      }
+      .btn-group {
+        justify-content: center;
+      }
+    }
